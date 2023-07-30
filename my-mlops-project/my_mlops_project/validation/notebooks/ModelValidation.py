@@ -77,8 +77,6 @@ dbutils.widgets.text("model_version", "", "Candidate Model Version")
 
 # COMMAND ----------
 
-
-
 run_mode = dbutils.widgets.get("run_mode").lower()
 assert run_mode == "disabled" or run_mode == "dry_run" or run_mode == "enabled"
 
@@ -305,5 +303,3 @@ with mlflow.start_run(
             print(
                 "Model validation failed in DRY_RUN. It will not block model deployment."
             )
-
-# COMMAND ----------
